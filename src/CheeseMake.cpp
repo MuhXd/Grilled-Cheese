@@ -20,7 +20,7 @@ CheeseMake* CheeseMake::create() {
     auto ret = new CheeseMake;
     if (ret && ret->init(420.f, 210.f)) {
         ret->autorelease();
-        ret->setID("Cheese"_spr)
+        ret->setID("Cheese"_spr);
         return ret;
     }
 
