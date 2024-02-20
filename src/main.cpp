@@ -25,7 +25,7 @@ protected:
     	m_mainLayer->addChild(menu);
 	}
 	static CheeseMake* create() {
-        auto ret = new RecordLayer();
+        auto ret = new CheeseMake();
         if (ret && ret->init(300, 200, "", "GJ_square02.png")) {
             ret->autorelease();
             return ret;
