@@ -1,4 +1,3 @@
-e the Geode headers.
 
 #include <Geode/Geode.hpp>
 
