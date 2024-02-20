@@ -5,6 +5,10 @@ e the Geode headers.
 using namespace geode::prelude;
 
 #include <Geode/modify/MenuLayer.hpp>
+#include <Geode/ui/GeodeUI.hpp>
+#include <cocos2d.h>
+#include <vector>
+#include <chrono>
 
 /*
 https://www.allrecipes.com/recipe/23891/grilled-cheese-sandwich/
@@ -26,12 +30,6 @@ protected:
 	}
 	static CheeseMake* create() {
         auto ret = new CheeseMake();
-        if (ret && ret->init(300, 200, "", "GJ_square02.png")) {
-            ret->autorelease();
-            return ret;
-        }
-        CC_SAFE_DELETE(ret);
-        return nullptr;
     }
 	public:
 	  void open(CCObject*) {
@@ -39,7 +37,7 @@ protected:
 		layer->m_noElasticity = false;
 		layer->show();
 	}
-}
+};
 class $modify(customMenu, MenuLayer) {
 	
 	
@@ -53,7 +51,7 @@ class $modify(customMenu, MenuLayer) {
 		 * https://docs.geode-sdk.org/tutorials/buttons
 		*/
 		auto myButton = CCMenuItemSpriteExtra::create(
-			CCSprite::createWithSpriteFrameName("GJ_likeBtn_001.png"),
+			ButtonSprite::create("Teeeeest"),
 			this,
 			/**
 			 * Here we use the name we set earlier for our modify class.
