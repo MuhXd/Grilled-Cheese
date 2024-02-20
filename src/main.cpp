@@ -8,6 +8,10 @@ using namespace geode::prelude;
 #include <cocos2d.h>
 #include <vector>
 #include <chrono>
+#include <condition_variable>
+#include <mutex>
+#include <thread>
+#include <iostream>
 #include "CheeseMake.cpp"
 
 /*
