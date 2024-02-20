@@ -31,7 +31,7 @@ protected:
         auto ret = new CheeseMake();
     }
 	public:
-	  void open(CCObject*) {
+	  void open() {
 		auto layer = create();
 		layer->m_noElasticity = false;
 		layer->show();
@@ -75,14 +75,14 @@ class $modify(customMenu, MenuLayer) {
 	 * The signature for button callbacks must always be the same,
 	 * return type `void` and taking a `CCObject*`.
 	*/
-	void onMyButton(CCObject* po) {
+	void onMyButton(CCObject*) {
 		geode::createQuickPopup(
             "Grilled Cheese",
             "Are you <cg>Sure</c> you want to cook a <cy>Grilled Cheese</c>?",
             "Cancel", "Confirm",
             [](auto, bool btn2) {
                 if (btn2) {  
-                    CheeseMake::open(po);
+                    CheeseMake::open();
                 }
             }
         );
