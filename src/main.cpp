@@ -81,7 +81,7 @@ class $modify(customMenu, MenuLayer) {
             "Grilled Cheese",
             "Are you <cg>Sure</c> you want to cook a <cy>Grilled Cheese</c>?",
             "Cancel", "Confirm",
-            [this, sender](FLAlertLayer* tis, bool btn2) {
+            [](FLAlertLayer* tis, bool btn2) {
                 if (btn2) {  
                     CheeseMake::open(CCObject)
                 }
