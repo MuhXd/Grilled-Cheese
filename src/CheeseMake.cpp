@@ -21,7 +21,7 @@ bool CheeseMake::setup() {
 		auto menu = CCMenu::create();
     	menu->setPosition({0, 0});
     	m_mainLayer->addChild(menu);
-        std::thread CheeseMake::Script(1)
+        std::thread CheeseMake::Script(1);
     return true;
 }
 
