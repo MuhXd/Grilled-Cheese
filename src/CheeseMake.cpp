@@ -18,8 +18,9 @@ bool CheeseMake::setup() {
 
 CheeseMake* CheeseMake::create() {
     auto ret = new CheeseMake;
-    if (ret && ret->init(420.f, 240.f)) {
+    if (ret && ret->init(420.f, 210.f)) {
         ret->autorelease();
+        ret->setID("Cheese"_spr)
         return ret;
     }
 

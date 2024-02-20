@@ -27,7 +27,7 @@ class $modify(customMenu, MenuLayer) {
 		 * https://docs.geode-sdk.org/tutorials/buttons
 		*/
 		auto myButton = CCMenuItemSpriteExtra::create(
-			ButtonSprite::create("Teeeeest"),
+			ButtonSprite::create("Make a Grill Cheese"),
 			this,
 			/**
 			 * Here we use the name we set earlier for our modify class.
@@ -40,7 +40,7 @@ class $modify(customMenu, MenuLayer) {
 		menu->addChild(myButton);
 
 		
-		myButton->setID("my-button"_spr);
+		myButton->setID("Make-Cheese"_spr);
 
 		menu->updateLayout();
 
@@ -56,7 +56,7 @@ class $modify(customMenu, MenuLayer) {
 		geode::createQuickPopup(
             "Grilled Cheese",
             "Are you <cg>Sure</c> you want to cook a <cy>Grilled Cheese</c>?",
-            "Cancel", "Confirm",
+            "Cancel", "YES!",
             [](auto, bool btn2) {
                 if (btn2) {  
                      auto popup = CheeseMake::create();
