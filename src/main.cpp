@@ -8,35 +8,12 @@ using namespace geode::prelude;
 #include <cocos2d.h>
 #include <vector>
 #include <chrono>
+#include "CheeseMake.cpp"
 
 /*
 https://www.allrecipes.com/recipe/23891/grilled-cheese-sandwich/
 */
-class CheeseMake : public geode::Popup<std::string const&> {
-protected:
-    bool setup(std::string const& value) override {
-	  auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
-		auto versionLabel = CCLabelBMFont::create("Step One", "chatFont.fnt");
-		versionLabel->setOpacity(60);
-		versionLabel->setAnchorPoint(ccp(0.0f,0.5f));
-		versionLabel->setPosition(winSize/2 + ccp(-winSize.width/2, -winSize.height/2) + ccp(3, 6));
-		versionLabel->setScale(0.5f);
-		this->addChild(versionLabel);
-		this->setTitle("Grilled Cheese");
-		auto menu = CCMenu::create();
-    	menu->setPosition({0, 0});
-    	m_mainLayer->addChild(menu);
-	}
-	static CheeseMake* create() {
-        auto ret = new CheeseMake();
-    }
-	public:
-	  void open() {
-		auto layer = create();
-		layer->m_noElasticity = false;
-		layer->show();
-	}
-};
+
 class $modify(customMenu, MenuLayer) {
 	
 	
@@ -82,7 +59,9 @@ class $modify(customMenu, MenuLayer) {
             "Cancel", "Confirm",
             [](auto, bool btn2) {
                 if (btn2) {  
-                    CheeseMake::open();
+                     auto popup = CheeseMake::create();
+       				 popup->m_noElasticity = false;
+        			 popup->show();
                 }
             }
         );
