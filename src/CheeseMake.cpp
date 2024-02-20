@@ -3,7 +3,7 @@
 
 bool CheeseMake::setup() {
         auto winSize = CCDirector::get()->getWinSize();
-		auto versionLabel = CCLabelBMFont::create("Step One", "chatFont.fnt");
+		auto versionLabel = CCLabelBMFont::create("https://www.allrecipes.com/recipe/23891/grilled-cheese-sandwich/", "chatFont.fnt");
 		versionLabel->setOpacity(60);
 		versionLabel->setAnchorPoint(ccp(0.0f,0.5f));
 		versionLabel->setPosition(winSize/2 + ccp(-winSize.width/2, -winSize.height/2) + ccp(3, 6));
