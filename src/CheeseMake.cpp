@@ -1,9 +1,18 @@
 #include "CheeseMake.hpp"
 #include <condition_variable>
 #include <mutex>
+#include <fmt/format.h>
+#include <chrono>
 #include <thread>
+#include <queue>
+#include <unordered_map>
+#include <algorithm>
+#include <random>
+#include <string>
+#include <sstream>
+#include <codecvt>
 #include <iostream>
-int CheeseMake::Script(int scriptnum) {
+void Script(int scriptnum) {
     if (scriptnum) == 1 {
         std::this_thread::sleep_for(std::chrono::seconds(3));
          std::cout << "Script place\n I love scripts";
@@ -21,7 +30,7 @@ bool CheeseMake::setup() {
 		auto menu = CCMenu::create();
     	menu->setPosition({0, 0});
     	m_mainLayer->addChild(menu);
-        std::thread CheeseMake::Script(1);
+        Script(1);
     return true;
 }
 
