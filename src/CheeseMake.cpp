@@ -12,7 +12,7 @@ void Script(int scriptnum) {
           while (true) {
         std::this_thread::sleep_for(std::chrono::seconds(0.5));
         pause+=0.5;
-        pause->setString(std::string(pause));
+        timer->setString(std::string(pause));
         log::info("Paused for added 0.5");
         if (pause >= 3) {
 log::info("Paused for 3s");
