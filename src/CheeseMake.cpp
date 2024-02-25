@@ -8,9 +8,11 @@
 void Script(int scriptnum) {
     if (scriptnum == 1) {
         int pause = 0
+        auto timer = CCLabelBMFont::create("", "chatFont.fnt");
           while (true) {
         std::this_thread::sleep_for(std::chrono::seconds(0.5));
         pause+=0.5
+        pause->setString(pause);
         log::info("Paused for added 0.5");
         if (pause >= 3) {
 log::info("Paused for 3s");
