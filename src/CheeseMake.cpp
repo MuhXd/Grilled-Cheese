@@ -8,7 +8,7 @@
 void Script(int scriptnum) {
     if (scriptnum == 1) {
         std::this_thread::sleep_for(std::chrono::seconds(3));
-         log::info("Paused for 3s");
+        log::info("Paused for 3s");
     }
 }
 bool CheeseMake::setup() {
@@ -24,6 +24,7 @@ bool CheeseMake::setup() {
     	menu->setPosition({0, 0});
     	m_mainLayer->addChild(menu);
        std::thread e(Script, 1);
+       e.detach();
     return true;
 }
 
