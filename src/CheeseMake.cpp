@@ -1,36 +1,29 @@
 #include "CheeseMake.hpp"
-#include <condition_variable>
-#include <mutex>
-#include <fmt/format.h>
 #include <chrono>
 #include <thread>
 #include <queue>
-#include <unordered_map>
-#include <algorithm>
-#include <random>
 #include <string>
 #include <sstream>
-#include <codecvt>
 #include <iostream>
 void Script(int scriptnum) {
     if (scriptnum == 1) {
         std::this_thread::sleep_for(std::chrono::seconds(3));
-         std::cout << "Script place\n I love scripts";
+         log::info("Paused for 3s")
     }
 }
 bool CheeseMake::setup() {
         auto winSize = CCDirector::get()->getWinSize();
-		auto versionLabel = CCLabelBMFont::create("https://www.allrecipes.com/recipe/23891/grilled-cheese-sandwich/", "chatFont.fnt");
-		versionLabel->setOpacity(60);
-		versionLabel->setAnchorPoint(ccp(0.0f,0.5f));
-		versionLabel->setPosition(winSize/2 + ccp(-winSize.width/2, -winSize.height/2) + ccp(3, 6));
-		versionLabel->setScale(0.5f);
-		this->addChild(versionLabel);
+		auto recipe = CCLabelBMFont::create("https://www.allrecipes.com/recipe/23891/grilled-cheese-sandwich/", "chatFont.fnt");
+		recipe->setOpacity(60);
+		recipe->setAnchorPoint(ccp(0.0f,0.5f));
+		recipe->setPosition(winSize/2 + ccp(-winSize.width/2, -winSize.height/2) + ccp(3, 6));
+		recipe->setScale(0.5f);
+		this->addChild(recipe);
 		this->setTitle("Grilled Cheese");
 		auto menu = CCMenu::create();
     	menu->setPosition({0, 0});
     	m_mainLayer->addChild(menu);
-        Script(1);
+       std::thread e(Script, 1);
     return true;
 }
 
