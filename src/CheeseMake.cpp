@@ -7,12 +7,12 @@
 #include <iostream>
 void Script(int scriptnum) {
     if (scriptnum == 1) {
-        int pause = 0;
+        float pause = 0;
         auto timer = CCLabelBMFont::create("", "chatFont.fnt");
           while (true) {
-         std::this_thread::sleep_for(std::chrono::seconds(1));
-        pause+=1;
-        log::info("Paused for added 1");
+         std::this_thread::sleep_for(std::chrono::milliseconds(1));
+        pause+=0.001;
+        log::info("Paused for added 0.001s");
         if (pause >= 3) {
             log::info("Paused for 3s");
             break;
