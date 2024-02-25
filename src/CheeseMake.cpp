@@ -13,7 +13,7 @@
 #include <codecvt>
 #include <iostream>
 void Script(int scriptnum) {
-    if (scriptnum) == 1 {
+    if (scriptnum == 1) {
         std::this_thread::sleep_for(std::chrono::seconds(3));
          std::cout << "Script place\n I love scripts";
     }
@@ -36,7 +36,7 @@ bool CheeseMake::setup() {
 
 CheeseMake* CheeseMake::create() {
     auto ret = new CheeseMake;
-    if (ret && ret->init(420.f, 210.f)) {
+    if (ret && ret->initAnchored(420.f, 210.f)) {
         ret->autorelease();
         ret->setID("Cheese"_spr);
         return ret;
