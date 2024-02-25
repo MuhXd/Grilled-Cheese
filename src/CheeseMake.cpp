@@ -7,8 +7,15 @@
 #include <iostream>
 void Script(int scriptnum) {
     if (scriptnum == 1) {
-        std::this_thread::sleep_for(std::chrono::seconds(3));
-        log::info("Paused for 3s");
+        int pause = 0
+          while (true) {
+        std::this_thread::sleep_for(std::chrono::seconds(0.5));
+        pause+=0.5
+        if (pause >= 3) {
+log::info("Paused for 3s");
+break;
+        }
+          }
     }
 }
 bool CheeseMake::setup() {
